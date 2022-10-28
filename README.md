@@ -1,4 +1,15 @@
 # studentsystem
 Playing with Java
 
-Creating a student database CRUD application using Java 19, launched with Spring Boot, using React and mySQL.
+Creating a student database CRUD application!
+
+### Backend
+    - Java 19
+    - Spring Boot
+    - XAMPP > mySQL > phpMyAdmin
+    - Postman
+
+### Frontend
+    - nodeJS
+    - REACT
+    
