@@ -1,12 +1,16 @@
-import * as React from 'react';
+// import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Container } from '@mui/system';
-import { Paper } from '@mui/material';
+import { Paper, Button } from '@mui/material';
 
 export default function Student() {
     const paperStyle={padding:'50px 20px', width:600, margin:"20px auto"}
-  return (
+    const[name,setName]=useState('')
+    const[address,setAddress]=useState('');
+  
+    return (
 
     <Container>
         <Paper elevation={3} style={paperStyle}>
@@ -19,8 +23,15 @@ export default function Student() {
       noValidate
       autoComplete="off"
     >
-      <TextField id="outlined-basic" label="Student Name" variant="outlined" fullWidth/>
-      <TextField id="outlined-basic" label="Student Address" variant="outlined" fullWidth/>
+      <TextField id="outlined-basic" label="Student Name" variant="outlined" fullWidth 
+      value={name}
+      onChange={(e)=>setName(e.target.value)}
+      />
+      <TextField id="outlined-basic" label="Student Address" variant="outlined" fullWidth
+      value={address}
+      onChange={(e)=>setAddress(e.target.value)}
+      />
+      <Button variant="contained">Submit</Button>
     </Box>
     </Paper>
     </Container>
