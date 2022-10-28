@@ -1,5 +1,5 @@
 // import * as React from 'react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Container } from '@mui/system';
@@ -8,7 +8,8 @@ import { Paper, Button } from '@mui/material';
 export default function Student() {
     const paperStyle={padding:'50px 20px', width:600, margin:"20px auto"}
     const[name,setName]=useState('')
-    const[address,setAddress]=useState('');
+    const[address,setAddress]=useState('')
+    const[students,setStudents]=useState([]);
 
     const handleClick=(e)=>{
         e.preventDefault()
@@ -23,6 +24,15 @@ export default function Student() {
         console.log("New Student Added!")
     })
 }
+
+    useEffect(()=>{
+        fetch("http://localhost:8080/student/getAll")
+        .then(res=>res.json())
+        .then((result)=>{
+            setStudents(result);
+        }
+    )
+},[])
   
     return (
 
