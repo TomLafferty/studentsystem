@@ -13,3 +13,5 @@ Creating a student database CRUD application!
     - nodeJS
     - REACT
     - material-ui
+   
+# Updating to use for an independent project for local police force to upgrade their current system for tracking/reporting data
